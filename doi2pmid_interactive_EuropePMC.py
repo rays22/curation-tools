@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-""" Find publication title, DOI or PMID based on either the DOI or the PMID as the query term by using the Europe PMC API. """
+""" Find publication title, DOI or PMID based on either the DOI or the PMID as the query term by using the Europe PMC API (http://europepmc.org/RestfulWebService#!/Europe32PMC32Articles32RESTful32API/search). """
 
 __author__  = "Ray Stefancsik"
 __version__ = "0.01"
@@ -20,7 +20,7 @@ import requests
 ######################################################################
 import argparse
 
-parser = argparse.ArgumentParser( description='You must provide either a Digital Object Identifier or a PMID to query Europe PMC in a format starting with either "DOI:" or "EXT_ID", respectively. Keyword parameters are case insensitive. For example "doi:10.1016/j.stem.2019.12.005" or "ext_id:31928944".', formatter_class=argparse.RawTextHelpFormatter )
+parser = argparse.ArgumentParser( description='You must provide either a Digital Object Identifier or a PMID to query Europe PMC in a format starting with either "DOI:" or "EXT_ID", respectively. Keyword parameters are case insensitive. For example "doi:10.1016/j.stem.2019.12.005" or "ext_id:31928944". For publication title queries, use syntax: \'TITLE:"Article title."\'', formatter_class=argparse.RawTextHelpFormatter )
 parser.add_argument( 'doi_OR_pmid', help='Use "doi:" for Digital Object Identifier queries. Use "ext_id:" for PMID queries.' )
 
 
