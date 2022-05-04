@@ -3,7 +3,7 @@
 """ Look up items in a list from a dictionary. Results are printed to standard output. The user needs to provide a list in a file with one item per line. The dictionary to use must be also provided by the user in a two-column (tsv or csv) format."""
 
 __author__  = "Ray Stefancsik"
-__version__ = "2016-11-09"
+__version__ = "2022-05-04"
 
 # Modules to import
 ######################################################################
@@ -11,11 +11,15 @@ __version__ = "2016-11-09"
 ######################################################################
 import argparse
 
+### Mandatory positional arguments
 parser = argparse.ArgumentParser( description='Look up items from a dictionary, convert them, and print the results to standard output.' )
 parser.add_argument( 'your_dictionary', help='Path to your dictionary file. FORMAT: Use two columns separated by tab (default) or comma (optional).' )
 parser.add_argument( 'your_list', help='Path to your file with the list of items to convert using the dictionary. FORMAT: one item per line.' )
 
-# Optional, but mutually exclusive user options:
+### Optional arguments:
+parser.add_argument('-e', '--error_message', help='Specify an error message if a key is not in your specified dictionary table.', nargs='?', default='verbose', const='verbose' ) # if not specified by user then it defaults to given value
+
+### Optional, but mutually exclusive user options:
 group = parser.add_mutually_exclusive_group()
 group.add_argument('-c', '--csv', help='Use comma as column separator.', action='store_true')
 group.add_argument('-t', '--tab', help='Use tab as column separator.', action='store_true')
@@ -78,6 +82,9 @@ for line in fhand:
     try:
         print(d[words])
     except:
-        print( 'ERROR:', words ,'is not in your dictionary!!')
+        if args.error_message == 'verbose':
+            print( 'ERROR:', words ,'is not in your dictionary!!')
+        else:
+            print(args.error_message)
 # close file
 fhand.close()
