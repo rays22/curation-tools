@@ -1,4 +1,4 @@
 UPDATED,ONTOLOGY,digit_count,current_first_available,end_of_range,remaining,file location
 2021-09-23,MONDO_,7,800002,804999,4997,https://github.com/monarch-initiative/mondo/blob/master/src/ontology/mondo-idranges.owl
 2021-09-23,UBERON_,7,8420000,8429999,9999,https://github.com/obophenotype/uberon/blob/master/src/ontology/uberon-idranges.owl
-2022-04-01,OBA_,7,2040153,2049999,9846,https://github.com/obophenotype/bio-attribute-ontology/blob/master/src/ontology/oba-idranges.owl
+2022-07-18,OBA_,7,2040156,2049999,9846,https://github.com/obophenotype/bio-attribute-ontology/blob/master/src/ontology/oba-idranges.owl
