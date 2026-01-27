@@ -13,9 +13,9 @@ import argparse
 import sys
 
 ### Mandatory positional arguments
-parser = argparse.ArgumentParser( description='1. Take two sets of elements as lists. 2. Go through the elements in list 1 and check if they partially match any elements in the second list. 3. Print the results to standard output.' )
-parser.add_argument( 'your_list1', help='Path to your first data file. FORMAT: Use a plain text file with one list element per line. Lines that start with # are ignored.' )
-parser.add_argument( 'your_list2', help='Path to your first data file. FORMAT: Use a plain text file with one list element per line. Lines that start with # are ignored.' )
+parser = argparse.ArgumentParser( description='1. Take two sets of elements as lists. 2. Go through the elements in the first list and check if they partially match any elements in the second list. 3. Print the results to standard output.' )
+parser.add_argument( 'your_list1', help='Path to your first list. FORMAT: Use a plain text file with one list element per line. Lines that start with # are ignored.' )
+parser.add_argument( 'your_list2', help='Path to your second list file. FORMAT: Use a plain text file with one list element per line. Lines that start with # are ignored.' )
 
 ### Optional, but mutually exclusive user options:
 group = parser.add_mutually_exclusive_group()
